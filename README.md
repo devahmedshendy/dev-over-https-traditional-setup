@@ -6,6 +6,7 @@ This repo is made for this [article](#) in which I explain how to setup local de
 > Please review [article](#) for the installation.
   * mkcert tool
   * caddy server (v2)
+  * node.js (>8.2.0)
 
 ### Run Project
 * Clone project
