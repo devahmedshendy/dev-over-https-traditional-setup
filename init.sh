@@ -4,8 +4,9 @@
 #   This script is to setup caddy server for running 
 # both node.js & vue.js apps locally over HTTPS (https://*.foo.bar)
 #
-#   - create certificate authority 
-#   - create trusted certificate for *.foo.bar domain.
+#   - Create certificate authority 
+#   - Create trusted certificate for *.foo.bar domain.
+#   - Gant low-numbered port access to caddy server
 # 
 
 echo """
@@ -34,7 +35,7 @@ mv ./_wildcard.foo.bar-key.pem ./caddy/certs
 
 echo """
 > Gant low-numbered port access to caddy server
-  sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/bin/caddy
+  sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
 """
 
 sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
