@@ -32,13 +32,15 @@ echo """
 mv ./_wildcard.foo.bar.pem ./caddy/certs
 mv ./_wildcard.foo.bar-key.pem ./caddy/certs
 
+if [ $(uname | tr '[:upper:]' '[:lower:]') == "linux" ] 
+then
+ echo """
+  > Gant low-numbered port access to caddy server
+    sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
+  """
 
-echo """
-> Gant low-numbered port access to caddy server
   sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
-"""
-
-sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
+fi
 
 echo """
 > Please add the following to /etc/hosts
