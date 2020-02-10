@@ -24,13 +24,13 @@ echo """
 mkcert "*.foo.bar"
 
 echo """
-> Save generated certs under ./caddy/certs
-  cp ./_wildcard.foo.bar.pem ./caddy/certs
-  cp ./_wildcard.foo.bar-key.pem ./caddy/certs
+> Save generated certs under ./caddy/certs/
+  mv ./_wildcard.foo.bar.pem ./caddy/certs/
+  mv ./_wildcard.foo.bar-key.pem ./caddy/certs/
 """
 
-mv ./_wildcard.foo.bar.pem ./caddy/certs
-mv ./_wildcard.foo.bar-key.pem ./caddy/certs
+mv ./_wildcard.foo.bar.pem ./caddy/certs/
+mv ./_wildcard.foo.bar-key.pem ./caddy/certs/
 
 if [ $(uname | tr '[:upper:]' '[:lower:]') == "linux" ] 
 then

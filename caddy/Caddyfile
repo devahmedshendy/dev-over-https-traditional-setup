@@ -12,7 +12,8 @@ backend.foo.bar {
     header_up X-Forwarded-For {remote}
     header_up X-Forwarded-Proto {scheme}
 
-    header_down Access-Control-Allow-Origin https:/frontend.foo.bar
+    header_down Access-Control-Allow-Origin https://frontend.foo.bar
+    header_down Access-Control-Allow-Credentials true
   }
 
 }
@@ -20,7 +21,7 @@ backend.foo.bar {
 frontend.foo.bar {
   tls ./certs/_wildcard.foo.bar.pem ./certs/_wildcard.foo.bar-key.pem
 
-  reverse_proxy localhost:8080 localhost:8080 {
+  reverse_proxy localhost:8080 {
     header_up Host "localhost"
     header_up X-Real-IP {remote}
     header_up X-Forwarded-Host "localhost"
