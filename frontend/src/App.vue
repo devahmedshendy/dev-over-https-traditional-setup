@@ -131,7 +131,6 @@ export default {
      * @param {Object} {err}   - Response error object
      */
     handleFailedRequest(err) {
-      console.log('app handleFailedRequest')
       const { status } = err.response
       let message = err.message ? err.message : 'UNKNOWN ERROR'
 

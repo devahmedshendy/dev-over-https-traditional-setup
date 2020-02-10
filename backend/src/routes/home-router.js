@@ -10,7 +10,7 @@ const router = Router();
 /**
  * GET /home
  */
-router.get('/', ensureLoggedIn ,function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.json({ success: true })
 });
 
