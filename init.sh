@@ -1,9 +1,7 @@
 #!/bin/bash
 #
 # Description:
-#   This script is to setup caddy server for running 
-# both node.js & vue.js apps locally over HTTPS (https://*.foo.bar)
-#
+#   Run this script before using project, as it does the following:
 #   - Create certificate authority 
 #   - Create trusted certificate for *.foo.bar domain.
 #   - Gant low-numbered port access to caddy server

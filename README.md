@@ -10,7 +10,7 @@ Backend app is made by `node.js`, and frontend one by `vue.js`.
 ----
 ## Getting Started
 ### Prerequisites
-  * Ubuntu 18.04
+  * **Ubuntu 18.04**
   * [mkcert](https://github.com/FiloSottile/mkcert#installation)
   * [caddy server (v2_beta13)](https://github.com/caddyserver/caddy/releases/tag/v2.0.0-beta.13)
   * [node.js (>12.14.0)](https://nodejs.org/en/download/)
@@ -20,6 +20,11 @@ Backend app is made by `node.js`, and frontend one by `vue.js`.
 * Clone project
 ```bash
 git clone https://github.com/devahmedshendy/dev-over-https-traditional-setup.git
+```
+
+* Generate Local Trusted Certificate for ***.foo.bar** domain
+```bash
+./init.sh
 ```
 
 * Install backend dependencies and run it
